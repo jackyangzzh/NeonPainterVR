@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "Camera/CameraComponent.h"
 #include "VRPawn.generated.h"
 
 UCLASS()
@@ -19,11 +20,21 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+private:
 
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	// Config
+	UPROPERTY(EditDefaultsOnly)
+		TSubclassOf<class AHandController> HandControllerClass;
+
+	// Components
+	UPROPERTY(VisibleAnywhere)
+		USceneComponent* VRRoot;
+
+	UPROPERTY(VisibleAnywhere)
+		UCameraComponent* Camera;
+
+	// Reference
+	UPROPERTY()
+		AHandController* RightHandController;
 
 };
