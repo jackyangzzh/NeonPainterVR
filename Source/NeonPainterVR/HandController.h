@@ -4,8 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "MotionControllerComponent.h"
-
 #include "HandController.generated.h"
 
 UCLASS()
@@ -25,7 +23,4 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-private:
-	UPROPERTY(VsibleAnywhere)
-		UMotionControllerComponent* MotionController;
 };
