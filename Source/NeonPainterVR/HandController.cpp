@@ -25,6 +25,11 @@ void AHandController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (CurrentStroke)
+	{
+		CurrentStroke->Update(GetActorLocation());
+	}
+
 }
 
 void AHandController::TriggerPressed()
@@ -35,6 +40,6 @@ void AHandController::TriggerPressed()
 
 void AHandController::TriggerReleased()
 {
-
+	CurrentStroke = nullptr;
 }
 

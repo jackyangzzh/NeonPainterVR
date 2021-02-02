@@ -2,6 +2,7 @@
 
 
 #include "Stroke.h"
+#include "Components/SplineMeshComponent.h"
 
 // Sets default values
 AStroke::AStroke()
@@ -11,17 +12,13 @@ AStroke::AStroke()
 
 }
 
-// Called when the game starts or when spawned
-void AStroke::BeginPlay()
+void AStroke::Update(FVector CursorLocation)
 {
-	Super::BeginPlay();
-	
+
 }
 
-// Called every frame
-void AStroke::Tick(float DeltaTime)
+USplineMeshComponent* AStroke::CreateSplineMesh()
 {
-	Super::Tick(DeltaTime);
-
+	USplineMeshComponent* NewSpline = NewObject<USplineMeshComponent>(this);
 }
 
