@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
-#include "Engine/World.h"
 #include "HandController.h"
+#include "Engine/World.h"
+
 
 // Sets default values
 AHandController::AHandController()
@@ -34,8 +34,8 @@ void AHandController::Tick(float DeltaTime)
 
 void AHandController::TriggerPressed()
 {
-	AStroke* Stroke = GetWorld()->SpawnActor<AStroke>(StrokeClass);
-	Stroke->SetActorLocation(GetActorLocation());
+	CurrentStroke = GetWorld()->SpawnActor<AStroke>(StrokeClass);
+	CurrentStroke->SetActorLocation(GetActorLocation());
 }
 
 void AHandController::TriggerReleased()

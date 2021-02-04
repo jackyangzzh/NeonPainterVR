@@ -18,6 +18,16 @@ public:
 	void Update(FVector CursorLocation);
 
 private:
-	USplineMeshComponent* CreateSplineMesh();
+	class USplineMeshComponent* CreateSplineMesh();
 
+	UPROPERTY(VisibleAnywhere)
+		USceneComponent* Root;
+
+	UPROPERTY(EditDefaultsOnly)
+		UStaticMesh* SplineMesh;
+
+	UPROPERTY(EditDefaultsOnly)
+		UMaterialInterface* SplineMaterial;
+
+	FVector PreviousCursor;
 };
