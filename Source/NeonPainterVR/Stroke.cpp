@@ -19,16 +19,42 @@ AStroke::AStroke()
 
 void AStroke::Update(FVector CursorLocation)
 {
-	FTransform NewStrokeTransform;
-
-	FVector LocalCursorLocation = GetTransform().InverseTransformPosition(CursorLocation);
-
-	NewStrokeTransform.SetLocation(LocalCursorLocation);
-
-	StrokeMesh->AddInstance(NewStrokeTransform);
-
-	UE_LOG(LogTemp, Warning, TEXT("In update function"));
+	if (PreviousCursor.IsNearlyZero()) {
+		PreviousCursor = CursorLocation;
+		return;
+	}
+	StrokeMesh->AddInstance(GetNextSegmentTransform(CursorLocation));
 
 	PreviousCursor = CursorLocation;
+}
+
+FTransform AStroke::GetNextSegmentTransform(FVector CurrentLocation) const
+{
+	FTransform SegmentTransform;
+
+	SegmentTransform.SetScale3D(GetNextSegmentScale(CurrentLocation));
+	SegmentTransform.SetRotation(GetNextSegmentRotation(CurrentLocation));
+	SegmentTransform.SetLocation(GetNextSegmentLocation(CurrentLocation));
+
+	return SegmentTransform;
+}
+
+FVector AStroke::GetNextSegmentScale(FVector CurrentLocation) const
+{
+	FVector SegmentScale = CurrentLocation - PreviousCursor;
+
+	return FVector( SegmentScale.Size(), 1, 1);
+}
+
+FQuat AStroke::GetNextSegmentRotation(FVector CurrentLocation) const
+{
+	FVector SegmentNormal = (CurrentLocation - PreviousCursor).GetSafeNormal();
+
+	return FQuat::FindBetweenNormals(FVector::ForwardVector, SegmentNormal) ;
+}
+
+FVector AStroke::GetNextSegmentLocation(FVector CurrentLocation) const
+{
+	return GetTransform().InverseTransformPosition(PreviousCursor);
 }
 
