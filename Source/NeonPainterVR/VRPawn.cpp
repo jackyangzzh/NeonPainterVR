@@ -4,6 +4,7 @@
 #include "VRPawn.h"
 #include "Engine/World.h"
 #include "HandController.h"
+#include "Saving/NeonPainterSaveGame.h"
 
 // Sets default values
 AVRPawn::AVRPawn()
@@ -27,6 +28,8 @@ void AVRPawn::BeginPlay()
 		RightHandController->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::SnapToTargetIncludingScale);
 		RightHandController->SetOwner(this);
 	}
+	UNeonPainterSaveGame* save = UNeonPainterSaveGame::Create();
+	save->Save();
 }
 
 void AVRPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
