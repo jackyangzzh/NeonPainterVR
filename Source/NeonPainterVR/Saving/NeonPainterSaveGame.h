@@ -18,4 +18,13 @@ public:
 	static UNeonPainterSaveGame* Create();
 
 	bool Save();
+
+	static UNeonPainterSaveGame* Load();
+
+	void SetState(FString NewState) { State = NewState; }
+	FString GetState() const { return State;  }
+
+private:
+	UPROPERTY()
+		FString State;
 };

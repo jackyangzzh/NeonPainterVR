@@ -28,8 +28,6 @@ void AVRPawn::BeginPlay()
 		RightHandController->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::SnapToTargetIncludingScale);
 		RightHandController->SetOwner(this);
 	}
-	UNeonPainterSaveGame* save = UNeonPainterSaveGame::Create();
-	save->Save();
 }
 
 void AVRPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -38,6 +36,26 @@ void AVRPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 	PlayerInputComponent->BindAction(TEXT("RightTrigger"), EInputEvent::IE_Pressed, this, &AVRPawn::RightTriggerPressed);
 	PlayerInputComponent->BindAction(TEXT("RightTrigger"), EInputEvent::IE_Released, this, &AVRPawn::RightTriggerReleased);
+
+	PlayerInputComponent->BindAction(TEXT("Save"), EInputEvent::IE_Pressed, this, &AVRPawn::Save);
+	PlayerInputComponent->BindAction(TEXT("Load"), EInputEvent::IE_Pressed, this, &AVRPawn::Load);
+}
+
+void AVRPawn::Save()
+{
+	UNeonPainterSaveGame* SaveFile = UNeonPainterSaveGame::Create();
+	SaveFile->SetState("Hello There");
+	SaveFile->Save();
+}
+
+void AVRPawn::Load()
+{
+	UNeonPainterSaveGame* LoadFile = UNeonPainterSaveGame::Load();
+	if (LoadFile)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Load State %s"), *LoadFile->GetState());
+	}
+
 }
 
 

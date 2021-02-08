@@ -14,3 +14,8 @@ bool UNeonPainterSaveGame::Save()
 {
 	return UGameplayStatics::SaveGameToSlot(this, TEXT("Test"), 0);
 }
+
+UNeonPainterSaveGame* UNeonPainterSaveGame::Load()
+{
+	return Cast<UNeonPainterSaveGame>(UGameplayStatics::LoadGameFromSlot(TEXT("Test"), 0));
+}
