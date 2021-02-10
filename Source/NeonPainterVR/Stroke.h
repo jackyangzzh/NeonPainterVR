@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Components/InstancedStaticMeshComponent.h"
+#include "Saving/NeonPainterSaveGame.cpp"
+
 #include "Stroke.generated.h"
 
 UCLASS()
@@ -17,6 +19,8 @@ public:
 	AStroke();
 
 	void Update(FVector CursorLocation);
+
+	FStrokeState SerializeToStruct() const;
 
 private:
 

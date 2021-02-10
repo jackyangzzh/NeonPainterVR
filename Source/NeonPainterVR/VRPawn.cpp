@@ -45,6 +45,7 @@ void AVRPawn::Save()
 {
 	UNeonPainterSaveGame* SaveFile = UNeonPainterSaveGame::Create();
 	SaveFile->SetState("Hello There");
+	SaveFile->SerializeFromWorld(GetWorld());
 	SaveFile->Save();
 }
 
@@ -53,6 +54,7 @@ void AVRPawn::Load()
 	UNeonPainterSaveGame* LoadFile = UNeonPainterSaveGame::Load();
 	if (LoadFile)
 	{
+		LoadFile->DeserializeToWorld(GetWorld());
 		UE_LOG(LogTemp, Warning, TEXT("Load State %s"), *LoadFile->GetState());
 	}
 
