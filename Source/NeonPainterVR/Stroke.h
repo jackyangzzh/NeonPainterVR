@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Components/InstancedStaticMeshComponent.h"
-#include "Saving/NeonPainterSaveGame.cpp"
+#include "Saving/NeonPainterSaveGame.h"
 
 #include "Stroke.generated.h"
 
@@ -21,6 +21,7 @@ public:
 	void Update(FVector CursorLocation);
 
 	FStrokeState SerializeToStruct() const;
+	static AStroke* DeserializeFromStruct(UWorld* World, const FStrokeState& StrokeState);
 
 private:
 
@@ -42,4 +43,5 @@ private:
 		UInstancedStaticMeshComponent* JointMesh;
 
 	FVector PreviousCursor;
+	TArray<FVector> ControlPoints;
 };

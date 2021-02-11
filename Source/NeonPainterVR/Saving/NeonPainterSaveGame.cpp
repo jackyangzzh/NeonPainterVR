@@ -2,8 +2,8 @@
 
 #include "NeonPainterSaveGame.h"
 #include "Kismet/GameplayStatics.h"
-#include "../Stroke.h"
 #include "EngineUtils.h"
+#include "../Stroke.h"
 
 UNeonPainterSaveGame* UNeonPainterSaveGame::Create() 
 {
@@ -26,7 +26,7 @@ void UNeonPainterSaveGame::SerializeFromWorld(UWorld* World)
 	StrokeArray.Empty();
 	for (TActorIterator<AStroke> stroke(World); stroke; ++stroke)
 	{
-		StrokeArray.Add(stroke->GetClass());
+		StrokeArray.Add(stroke->SerializeToStruct());
 	}
 }
 
@@ -37,8 +37,8 @@ void UNeonPainterSaveGame::DeserializeToWorld(UWorld* World)
 		stroke->Destroy();
 	}
 
-	for (TSubclassOf<AStroke> StrokeClass : StrokeArray)
+	for (FStrokeState StrokeState: StrokeArray)
 	{
-		World->SpawnActor<AStroke>(StrokeClass);
+		AStroke::DeserializeFromStruct(World, StrokeState);
 	}
 }

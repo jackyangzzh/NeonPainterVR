@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/SaveGame.h"
+
 #include "NeonPainterSaveGame.generated.h"
 
 USTRUCT()
@@ -12,7 +13,7 @@ struct FStrokeState
 	GENERATED_BODY()
 
 	UPROPERTY()
-		TArray<TSubclassOf<class AStroke>> StrokeArray;
+		TSubclassOf<class AStroke> Class;
 
 	UPROPERTY()
 		TArray<FVector> ControlPoints;
