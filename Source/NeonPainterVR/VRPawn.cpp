@@ -3,7 +3,7 @@
 
 #include "VRPawn.h"
 #include "Engine/World.h"
-#include "HandController.h"
+#include "PaintHandController.h"
 #include "Saving/NeonPainterSaveGame.h"
 
 // Sets default values
@@ -22,11 +22,11 @@ void AVRPawn::BeginPlay()
 {
 	Super::BeginPlay();
 
-	if (HandControllerClass)
+	if (PaintHandControllerClass)
 	{
-		RightHandController = GetWorld()->SpawnActor<AHandController>(HandControllerClass);
-		RightHandController->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::SnapToTargetIncludingScale);
-		RightHandController->SetOwner(this);
+		RightPaintHandController = GetWorld()->SpawnActor<AHandControllerBase>(PaintHandControllerClass);
+		RightPaintHandController->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::SnapToTargetIncludingScale);
+		RightPaintHandController->SetOwner(this);
 	}
 }
 
