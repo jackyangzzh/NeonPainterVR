@@ -9,7 +9,7 @@ AUIHandController::AUIHandController()
 	Pointer = CreateDefaultSubobject<UWidgetInteractionComponent>(TEXT("Pointer"));
 	Pointer->SetupAttachment(GetRootComponent());
 }
-
+ 
 void AUIHandController::TriggerPressed()
 {
 	Pointer->PressPointerKey(EKeys::LeftMouseButton);
