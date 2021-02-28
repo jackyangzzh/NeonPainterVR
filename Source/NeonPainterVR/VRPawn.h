@@ -41,6 +41,8 @@ private:
 	UPROPERTY(VisibleAnywhere)
 		UCameraComponent* Camera;
 
+	FString CurrentSlotName;
+
 	// Reference
 	UPROPERTY()
 		AHandControllerBase* RightPaintHandController;

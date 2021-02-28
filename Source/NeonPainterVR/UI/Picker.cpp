@@ -11,7 +11,7 @@ APicker::APicker()
 	PrimaryActorTick.bCanEverTick = true;
 
 	Root = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
-	SetRootComponent(Root);
+	SetRootComponent(Root); 
 
 	PaintGrid = CreateDefaultSubobject<UWidgetComponent>(TEXT("PaintGrid"));
 	PaintGrid->SetupAttachment(GetRootComponent());

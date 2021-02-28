@@ -4,21 +4,23 @@
 #include "Kismet/GameplayStatics.h"
 #include "EngineUtils.h"
 #include "../Stroke.h"
+#include "Misc/Guid.h"
 
 UNeonPainterSaveGame* UNeonPainterSaveGame::Create() 
 {
-	USaveGame* NewSaveGame = UGameplayStatics::CreateSaveGameObject(StaticClass());
-	return Cast<UNeonPainterSaveGame>(NewSaveGame);
+	UNeonPainterSaveGame* NewSaveGame = Cast<UNeonPainterSaveGame>(UGameplayStatics::CreateSaveGameObject(StaticClass()));
+	NewSaveGame->SlotName = FGuid::NewGuid().ToString();
+	return NewSaveGame;
 }
 
 bool UNeonPainterSaveGame::Save()
 {
-	return UGameplayStatics::SaveGameToSlot(this, TEXT("Test"), 0);
+	return UGameplayStatics::SaveGameToSlot(this, SlotName, 0);
 }
 
-UNeonPainterSaveGame* UNeonPainterSaveGame::Load()
+UNeonPainterSaveGame* UNeonPainterSaveGame::Load(FString SlotName)
 {
-	return Cast<UNeonPainterSaveGame>(UGameplayStatics::LoadGameFromSlot(TEXT("Test"), 0));
+	return Cast<UNeonPainterSaveGame>(UGameplayStatics::LoadGameFromSlot(SlotName, 0));
 }
 
 void UNeonPainterSaveGame::SerializeFromWorld(UWorld* World)

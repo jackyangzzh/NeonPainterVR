@@ -22,6 +22,11 @@ void AVRPawn::BeginPlay()
 {
 	Super::BeginPlay();
 
+	UNeonPainterSaveGame* Painting = UNeonPainterSaveGame::Create();
+	if (Painting && Painting->Save())
+	{
+		CurrentSlotName = Painting->GetSlotName();
+	}
 	if (PaintHandControllerClass)
 	{
 		RightPaintHandController = GetWorld()->SpawnActor<AHandControllerBase>(PaintHandControllerClass);
@@ -43,21 +48,24 @@ void AVRPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void AVRPawn::Save()
 {
-	UNeonPainterSaveGame* SaveFile = UNeonPainterSaveGame::Create();
-	SaveFile->SetState("Hello There");
-	SaveFile->SerializeFromWorld(GetWorld());
-	SaveFile->Save();
+	UNeonPainterSaveGame* SaveFile = UNeonPainterSaveGame::Load(CurrentSlotName);
+	if (SaveFile)
+	{
+		SaveFile->SetState("Hello There");
+		SaveFile->SerializeFromWorld(GetWorld());
+		SaveFile->Save();
+	}
+
 }
 
 void AVRPawn::Load()
 {
-	UNeonPainterSaveGame* LoadFile = UNeonPainterSaveGame::Load();
+	UNeonPainterSaveGame* LoadFile = UNeonPainterSaveGame::Load(CurrentSlotName);
 	if (LoadFile)
 	{
 		LoadFile->DeserializeToWorld(GetWorld());
 		UE_LOG(LogTemp, Warning, TEXT("Load State %s"), *LoadFile->GetState());
 	}
-
 }
 
 

@@ -31,7 +31,7 @@ public:
 
 	bool Save();
 
-	static UNeonPainterSaveGame* Load();
+	static UNeonPainterSaveGame* Load(FString SlotName);
 
 	void SetState(FString NewState) { State = NewState; }
 	FString GetState() const { return State;  }
@@ -39,9 +39,14 @@ public:
 	void SerializeFromWorld(UWorld* World);
 	void DeserializeToWorld(UWorld* world);
 
+	FString GetSlotName() const { return SlotName; }
+
 private:
 	UPROPERTY()
 		FString State;
+
+	UPROPERTY()
+		FString SlotName;
 
 	UPROPERTY()
 		TArray<FStrokeState> StrokeArray;

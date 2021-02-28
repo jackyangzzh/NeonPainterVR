@@ -17,4 +17,5 @@ void UPaintGrid::AddPainting()
 	if (!CardContainer) return;
 
 	CardContainer->AddChild(newWidget);
+
 }
