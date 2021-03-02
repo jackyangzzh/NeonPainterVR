@@ -64,7 +64,6 @@ void AVRPawn::Load()
 	if (LoadFile)
 	{
 		LoadFile->DeserializeToWorld(GetWorld());
-		UE_LOG(LogTemp, Warning, TEXT("Load State %s"), *LoadFile->GetState());
 	}
 }
 

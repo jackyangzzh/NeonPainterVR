@@ -5,16 +5,30 @@
 #include "EngineUtils.h"
 #include "../Stroke.h"
 #include "Misc/Guid.h"
+#include "SaveGameIndex.h"
 
 UNeonPainterSaveGame* UNeonPainterSaveGame::Create() 
 {
 	UNeonPainterSaveGame* NewSaveGame = Cast<UNeonPainterSaveGame>(UGameplayStatics::CreateSaveGameObject(StaticClass()));
 	NewSaveGame->SlotName = FGuid::NewGuid().ToString();
+
+	if(!NewSaveGame->Save()) return nullptr;
+
+	USaveGameIndex* Index = USaveGameIndex::Load();
+	Index->AddSaveGame(NewSaveGame);
+	Index->Save();
+
 	return NewSaveGame;
 }
 
 bool UNeonPainterSaveGame::Save()
 {
+	UE_LOG(LogTemp, Warning, TEXT("Game Saved"));
+	for (FString Name : USaveGameIndex::Load()->GetSlotNames())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Name of File is %s"), *Name);
+	}
+
 	return UGameplayStatics::SaveGameToSlot(this, SlotName, 0);
 }
 
