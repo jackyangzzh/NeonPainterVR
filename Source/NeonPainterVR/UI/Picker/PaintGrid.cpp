@@ -4,7 +4,7 @@
 #include "PaintGrid.h"
 #include "Components/SizeBox.h"
 
-void UPaintGrid::AddPainting()
+void UPaintGrid::AddPainting(int32 index)
 {
 	if (!PaintGrid) return;
 	
@@ -12,7 +12,7 @@ void UPaintGrid::AddPainting()
 
 	if (!newWidget) return;
 
-	USizeBox* CardContainer = Cast<USizeBox>(PaintGrid->GetChildAt(0));
+	USizeBox* CardContainer = Cast<USizeBox>(PaintGrid->GetChildAt(index));
 
 	if (!CardContainer) return;
 

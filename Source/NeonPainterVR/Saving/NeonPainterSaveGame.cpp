@@ -23,12 +23,6 @@ UNeonPainterSaveGame* UNeonPainterSaveGame::Create()
 
 bool UNeonPainterSaveGame::Save()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Game Saved"));
-	for (FString Name : USaveGameIndex::Load()->GetSlotNames())
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Name of File is %s"), *Name);
-	}
-
 	return UGameplayStatics::SaveGameToSlot(this, SlotName, 0);
 }
 

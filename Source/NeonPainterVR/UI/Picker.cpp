@@ -2,6 +2,7 @@
 
 
 #include "Picker.h"
+#include "../Saving/SaveGameIndex.h"
 #include "Picker/PaintGrid.h"
 
 // Sets default values
@@ -26,16 +27,20 @@ void APicker::BeginPlay()
 	Super::BeginPlay();
 
 	UPaintGrid* PaintGridWidget = Cast<UPaintGrid>(PaintGrid->GetUserWidgetObject());
+	if (!PaintGrid) return;
 
-	if (!PaintGridWidget) return;
+	int32 index = 0;
 
-	PaintGridWidget->AddPainting();
+	for (FString SlotName : USaveGameIndex::Load()->GetSlotNames())
+	{
+		PaintGridWidget->AddPainting(index);
+		index++;
+	}
 }
 
 // Called every frame
 void APicker::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
