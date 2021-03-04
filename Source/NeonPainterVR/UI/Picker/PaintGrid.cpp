@@ -4,11 +4,13 @@
 #include "PaintGrid.h"
 #include "Components/SizeBox.h"
 
-void UPaintGrid::AddPainting(int32 index)
+void UPaintGrid::AddPainting(int32 index, FString PaintName)
 {
 	if (!PaintGrid) return;
 	
-	UUserWidget* newWidget = CreateWidget<UUserWidget>(GetWorld(), GridClass);
+	UPaintGridCard* newWidget = CreateWidget<UPaintGridCard>(GetWorld(), GridClass);
+
+	newWidget->SetPaintingName(PaintName);
 
 	if (!newWidget) return;
 

@@ -14,7 +14,10 @@ UCLASS()
 class NEONPAINTERVR_API UPaintGridCard : public UUserWidget
 {
 	GENERATED_BODY()
-	
+
+public:
+	void SetPaintingName(FString PaintingName);
+
 protected: 
 	UPROPERTY(BlueprintReadonly, VisibleAnywhere, meta = (BindWidget))
 		UTextBlock* SlotName;

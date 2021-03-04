@@ -33,7 +33,7 @@ void APicker::BeginPlay()
 
 	for (FString SlotName : USaveGameIndex::Load()->GetSlotNames())
 	{
-		PaintGridWidget->AddPainting(index);
+		PaintGridWidget->AddPainting(index, SlotName);
 		index++;
 	}
 }

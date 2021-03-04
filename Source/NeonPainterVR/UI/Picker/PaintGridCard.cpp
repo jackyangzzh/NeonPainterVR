@@ -3,3 +3,7 @@
 
 #include "PaintGridCard.h"
 
+void UPaintGridCard::SetPaintingName(FString PaintingName)
+{
+	SlotName->SetText(FText::FromString(PaintingName));
+}

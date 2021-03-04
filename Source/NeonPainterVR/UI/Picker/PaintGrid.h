@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "PaintGridCard.h"
 #include "Blueprint/UserWidget.h"
 #include "Components/UniformGridPanel.h"
 #include "PaintGrid.generated.h"
@@ -17,7 +18,7 @@ class NEONPAINTERVR_API UPaintGrid : public UUserWidget
 
 public:
 	UFUNCTION(BlueprintCallable)
-		void AddPainting(int32 index);
+		void AddPainting(int32 index, FString PaintName);
 	
 protected:
 	UPROPERTY(BlueprintReadonly, VisibleAnywhere, meta = (BindWidget))
@@ -25,5 +26,5 @@ protected:
 
 private:
 	UPROPERTY(EditDefaultsOnly)
-		TSubclassOf<UUserWidget> GridClass;
+		TSubclassOf<UPaintGridCard> GridClass;
 };
