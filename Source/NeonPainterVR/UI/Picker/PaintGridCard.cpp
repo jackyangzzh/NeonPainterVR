@@ -2,8 +2,19 @@
 
 
 #include "PaintGridCard.h"
+#include "Kismet/StereoLayerFunctionLibrary.h"
+#include "Kismet/GameplayStatics.h"
 
-void UPaintGridCard::SetPaintingName(FString PaintingName)
+void UPaintGridCard::SetPaintingName(FString Name)
 {
-	SlotName->SetText(FText::FromString(PaintingName));
+	PaintName = Name;
+	SlotName->SetText(FText::FromString(PaintName));
+
+	SlotButton->OnClicked.AddDynamic(this, &UPaintGridCard::OnClickButton);
+}
+
+void UPaintGridCard::OnClickButton()
+{
+	UStereoLayerFunctionLibrary::ShowSplashScreen();
+	UGameplayStatics::OpenLevel(GetWorld(),TEXT("Canvas"), true, "SlotName=" + PaintName);
 }
