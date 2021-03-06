@@ -18,5 +18,6 @@ public:
 	void InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage) override;
 
 private:
+	UPROPERTY()
 	FString SlotName;
 };
