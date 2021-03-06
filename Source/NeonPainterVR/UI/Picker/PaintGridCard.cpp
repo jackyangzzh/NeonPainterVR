@@ -15,7 +15,7 @@ void UPaintGridCard::SetPaintingName(FString Name)
 
 void UPaintGridCard::OnClickButton()
 {
-	//UStereoLayerFunctionLibrary::ShowSplashScreen();
+	UStereoLayerFunctionLibrary::ShowSplashScreen();
 	UGameplayStatics::OpenLevel(GetWorld(),TEXT("Canvas"), true, "SlotName=" + PaintName);
 	UE_LOG(LogTemp, Warning, TEXT("Hello"));
 }

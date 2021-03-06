@@ -43,7 +43,6 @@ void AVRPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	PlayerInputComponent->BindAction(TEXT("RightTrigger"), EInputEvent::IE_Released, this, &AVRPawn::RightTriggerReleased);
 
 	PlayerInputComponent->BindAction(TEXT("Save"), EInputEvent::IE_Released, this, &AVRPawn::Save);
-	PlayerInputComponent->BindAction(TEXT("Load"), EInputEvent::IE_Released, this, &AVRPawn::Load);
 }
 
 void AVRPawn::Save()
@@ -58,13 +57,5 @@ void AVRPawn::Save()
 
 }
 
-void AVRPawn::Load()
-{
-	UNeonPainterSaveGame* LoadFile = UNeonPainterSaveGame::Load(CurrentSlotName);
-	if (LoadFile)
-	{
-		LoadFile->DeserializeToWorld(GetWorld());
-	}
-}
 
 
