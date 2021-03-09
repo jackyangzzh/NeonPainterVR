@@ -1,10 +1,11 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "VRPawn.h"
 #include "Engine/World.h"
 #include "PaintHandController.h"
 #include "Saving/NeonPainterSaveGame.h"
+#include "PaintMode.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 AVRPawn::AVRPawn()
@@ -22,7 +23,7 @@ void AVRPawn::BeginPlay()
 {
 	Super::BeginPlay();
 
-	UNeonPainterSaveGame* Painting = UNeonPainterSaveGame::Create();
+	UNeonPainterSaveGame *Painting = UNeonPainterSaveGame::Create();
 	if (Painting && Painting->Save())
 	{
 		CurrentSlotName = Painting->GetSlotName();
@@ -35,7 +36,7 @@ void AVRPawn::BeginPlay()
 	}
 }
 
-void AVRPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+void AVRPawn::SetupPlayerInputComponent(UInputComponent *PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
@@ -47,15 +48,12 @@ void AVRPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void AVRPawn::Save()
 {
-	UNeonPainterSaveGame* SaveFile = UNeonPainterSaveGame::Load(CurrentSlotName);
-	if (SaveFile)
-	{
-		SaveFile->SetState("Hello There");
-		SaveFile->SerializeFromWorld(GetWorld());
-		SaveFile->Save();
-	}
+	auto Mode = Cast<APaintMode>(GetWorld()->GetAuthGameMode());
 
+	if (!Mode)
+		return;
+
+	Mode->Save();
+
+	UGameplayStatics::OpenLevel(GetWorld(),TEXT("MainMenu"));
 }
-
-
-

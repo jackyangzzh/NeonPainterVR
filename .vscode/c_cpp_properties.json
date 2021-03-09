@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+            "name": "NeonPainterVREditor Editor Win64 Development (NeonPainterVR)",
+            "intelliSenseMode": "msvc-x64",
+            "compileCommands": "C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR.json",
+            "cStandard": "c17",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}
