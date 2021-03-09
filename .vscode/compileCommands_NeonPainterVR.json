@@ -95,6 +95,16 @@
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
+		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UI\\\\Picker\\\\ActionBar.cpp",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UI\\\\Picker\\\\ActionBar.h",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UI\\\\Picker\\\\PaintGrid.cpp",
 		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
