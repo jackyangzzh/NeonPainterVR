@@ -32,6 +32,8 @@ private:
 	// Config
 	UPROPERTY(EditDefaultsOnly)
 		TSubclassOf<AHandControllerBase> PaintHandControllerClass;
+	UPROPERTY(EditDefaultsOnly)
+		TSubclassOf<AHandControllerBase> MenuHandControllerClass;
 
 	// Components
 	UPROPERTY(VisibleAnywhere)
@@ -46,4 +48,6 @@ private:
 	UPROPERTY()
 		AHandControllerBase* RightPaintHandController;
 
+	UPROPERTY()
+		AHandControllerBase* LeftMenuHandController;
 };
