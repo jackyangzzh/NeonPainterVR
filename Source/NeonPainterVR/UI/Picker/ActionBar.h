@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
 #include "Components/Button.h"
+#include "Picker.h"
 #include "ActionBar.generated.h"
 
 /**
@@ -18,6 +19,8 @@ class NEONPAINTERVR_API UActionBar : public UUserWidget
 public:
 	bool Initialize() override;
 
+	void SetParentPicker(APicker *newPicker);
+
 protected:
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, meta = (BindWidget))
 		UButton* AddButton;
@@ -30,5 +33,8 @@ private:
 		void OnAddButtonClick();
 	
 	UFUNCTION()
-	void OnDeleteButtonClick();
+		void OnDeleteButtonClick();
+
+	UPROPERTY()
+		APicker* ParentPicker;
 };

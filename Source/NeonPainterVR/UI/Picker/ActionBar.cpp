@@ -16,12 +16,23 @@ bool UActionBar::Initialize()
     return true;
 }
 
+void UActionBar::SetParentPicker(APicker* newPicker)
+{
+    ParentPicker = newPicker;
+}
+
 void UActionBar::OnAddButtonClick()
 {
-    UE_LOG(LogTemp, Warning, TEXT("Add Button"));
+    if(ParentPicker)
+    {
+        ParentPicker->AddPaint();
+    }
 }
 
 void UActionBar::OnDeleteButtonClick()
 {
-    UE_LOG(LogTemp, Warning, TEXT("Delete Button"));
+    if(ParentPicker)
+    {
+        ParentPicker->DeletePaint();
+    }
 }

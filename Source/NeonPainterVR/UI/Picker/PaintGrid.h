@@ -19,6 +19,8 @@ class NEONPAINTERVR_API UPaintGrid : public UUserWidget
 public:
 	UFUNCTION(BlueprintCallable)
 		void AddPainting(int32 index, FString PaintName);
+
+	void ClearPaint();
 	
 protected:
 	UPROPERTY(BlueprintReadonly, VisibleAnywhere, meta = (BindWidget))

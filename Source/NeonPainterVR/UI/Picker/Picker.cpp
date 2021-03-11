@@ -2,8 +2,10 @@
 
 
 #include "Picker.h"
-#include "../Saving/SaveGameIndex.h"
-#include "Picker/PaintGrid.h"
+#include "PaintGrid.h"
+#include "ActionBar.h"
+#include "../../Saving/SaveGameIndex.h"
+#include "../../Saving/NeonPainterSaveGame.h"
 
 // Sets default values
 APicker::APicker()
@@ -26,8 +28,43 @@ void APicker::BeginPlay()
 {
 	Super::BeginPlay();
 
-	UPaintGrid* PaintGridWidget = Cast<UPaintGrid>(PaintGrid->GetUserWidgetObject());
-	if (!PaintGrid) return;
+	UActionBar *ActionBarWidget = Cast<UActionBar>(ActionBar->GetUserWidgetObject());
+	if (ActionBarWidget) 
+	{
+		ActionBarWidget->SetParentPicker(this);
+	}
+
+	LoadSlots();
+}
+
+void APicker::AddPaint()
+{
+	UNeonPainterSaveGame::Create();
+
+	LoadSlots();
+
+	UE_LOG(LogTemp, Warning, TEXT("Add Paint"));
+}
+
+void APicker::DeletePaint()
+{
+	UPaintGrid *PaintGridWidget = Cast<UPaintGrid>(PaintGrid->GetUserWidgetObject());
+
+	if (!PaintGridWidget)
+		return;
+
+	PaintGridWidget->ClearPaint();
+	
+	UE_LOG(LogTemp, Warning, TEXT("Delete Paint"));
+}
+
+void APicker::LoadSlots()
+{
+	UPaintGrid *PaintGridWidget = Cast<UPaintGrid>(PaintGrid->GetUserWidgetObject());
+	if (!PaintGridWidget)
+		return;
+
+	PaintGridWidget->ClearPaint();
 
 	int32 index = 0;
 
