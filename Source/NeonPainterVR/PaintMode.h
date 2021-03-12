@@ -19,6 +19,9 @@ public:
 	void Save();
 	void Load();
 
+	UFUNCTION(BlueprintCallable)
+		void SaveAndExit();
+
 protected:
 	void BeginPlay() override;
 

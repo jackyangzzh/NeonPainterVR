@@ -46,18 +46,4 @@ void AVRPawn::SetupPlayerInputComponent(UInputComponent *PlayerInputComponent)
 
 	PlayerInputComponent->BindAction(TEXT("RightTrigger"), EInputEvent::IE_Pressed, this, &AVRPawn::RightTriggerPressed);
 	PlayerInputComponent->BindAction(TEXT("RightTrigger"), EInputEvent::IE_Released, this, &AVRPawn::RightTriggerReleased);
-
-	PlayerInputComponent->BindAction(TEXT("Save"), EInputEvent::IE_Released, this, &AVRPawn::Save);
-}
-
-void AVRPawn::Save()
-{
-	auto Mode = Cast<APaintMode>(GetWorld()->GetAuthGameMode());
-
-	if (!Mode)
-		return;
-
-	Mode->Save();
-
-	UGameplayStatics::OpenLevel(GetWorld(),TEXT("MainMenu"));
 }

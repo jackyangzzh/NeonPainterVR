@@ -41,3 +41,10 @@ void APaintMode::Save()
 		SaveFile->Save();
 	}
 }
+
+void APaintMode::SaveAndExit()
+{
+	Save();
+
+	UGameplayStatics::OpenLevel(GetWorld(), TEXT("MainMenu"));
+}

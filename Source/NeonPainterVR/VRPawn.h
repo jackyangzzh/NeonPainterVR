@@ -27,8 +27,6 @@ private:
 	void RightTriggerPressed() { if (RightPaintHandController) RightPaintHandController->TriggerPressed(); }
 	void RightTriggerReleased() { if (RightPaintHandController) RightPaintHandController->TriggerReleased(); }
 
-	void Save();
-
 	// Config
 	UPROPERTY(EditDefaultsOnly)
 		TSubclassOf<AHandControllerBase> PaintHandControllerClass;
