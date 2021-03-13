@@ -19,3 +19,4 @@ void UPaintGridCard::OnClickButton()
 	UGameplayStatics::OpenLevel(GetWorld(),TEXT("Canvas"), true, "SlotName=" + PaintName);
 	UE_LOG(LogTemp, Warning, TEXT("Hello"));
 }
+

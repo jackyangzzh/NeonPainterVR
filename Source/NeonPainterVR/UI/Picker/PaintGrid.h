@@ -6,6 +6,8 @@
 #include "PaintGridCard.h"
 #include "Blueprint/UserWidget.h"
 #include "Components/UniformGridPanel.h"
+#include "Components/HorizontalBox.h"
+#include "PageDot/PageDot.h"
 #include "PaintGrid.generated.h"
 
 /**
@@ -21,12 +23,23 @@ public:
 		void AddPainting(int32 index, FString PaintName);
 
 	void ClearPaint();
+
+	void AddPageDot(bool active);
 	
 protected:
 	UPROPERTY(BlueprintReadonly, VisibleAnywhere, meta = (BindWidget))
 		UUniformGridPanel* PaintGrid;
 
+	UPROPERTY(BlueprintReadonly, VisibleAnywhere, meta = (BindWidget))
+		UHorizontalBox* PageDots;
+
 private:
 	UPROPERTY(EditDefaultsOnly)
 		TSubclassOf<UPaintGridCard> GridClass;
+
+	UPROPERTY(EditDefaultsOnly)
+		TSubclassOf<UPageDot> PageDotClass;
+
+	UPROPERTY(EditDefaultsOnly)
+		float PageDotPadding = 10;
 };

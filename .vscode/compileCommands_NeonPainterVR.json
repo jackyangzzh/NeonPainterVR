@@ -1,147 +1,177 @@
 [
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\HandControllerBase.cpp",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\HandControllerBase.h",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\NeonPainterVR.Build.cs",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\NeonPainterVR.cpp",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\NeonPainterVR.h",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\NeonPainterVRGameModeBase.cpp",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\NeonPainterVRGameModeBase.h",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\PaintHandController.cpp",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\PaintHandController.h",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\PaintMode.cpp",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\PaintMode.h",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\Saving\\\\NeonPainterSaveGame.cpp",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\Saving\\\\NeonPainterSaveGame.h",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\Saving\\\\SaveGameIndex.cpp",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\Saving\\\\SaveGameIndex.h",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\Stroke.cpp",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\Stroke.h",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
-		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UI\\\\Picker.cpp",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UI\\\\Menu\\\\MenuHandController.cpp",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
-		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UI\\\\Picker.h",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UI\\\\Menu\\\\MenuHandController.h",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UI\\\\Menu\\\\WidgetInteractive.cpp",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UI\\\\Menu\\\\WidgetInteractive.h",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UI\\\\Picker\\\\ActionBar.cpp",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UI\\\\Picker\\\\ActionBar.h",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UI\\\\Picker\\\\PageDot\\\\PageDot.cpp",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UI\\\\Picker\\\\PageDot\\\\PageDot.h",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UI\\\\Picker\\\\PaintGrid.cpp",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UI\\\\Picker\\\\PaintGrid.h",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UI\\\\Picker\\\\PaintGridCard.cpp",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UI\\\\Picker\\\\PaintGridCard.h",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UI\\\\Picker\\\\Picker.cpp",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UI\\\\Picker\\\\Picker.h",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UIHandController.cpp",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\UIHandController.h",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\VRPawn.cpp",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
 		"file": "C:\\\\Users\\\\Jack\\\\Documents\\\\GitHub\\\\NeonPainterVR\\\\Source\\\\NeonPainterVR\\\\VRPawn.h",
-		"command": "\"\"cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
+		"command": "cl.exe @\"C:\\Users\\Jack\\Documents\\GitHub\\NeonPainterVR\\.vscode\\compileCommands_NeonPainterVR\\NeonPainterVR.182.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	}
 ]

@@ -63,6 +63,10 @@ void APicker::LoadSlots()
 	UPaintGrid *PaintGridWidget = Cast<UPaintGrid>(PaintGrid->GetUserWidgetObject());
 	if (!PaintGridWidget)
 		return;
+	
+	PaintGridWidget->AddPageDot(false);
+	PaintGridWidget->AddPageDot(false);
+	PaintGridWidget->AddPageDot(false);
 
 	PaintGridWidget->ClearPaint();
 

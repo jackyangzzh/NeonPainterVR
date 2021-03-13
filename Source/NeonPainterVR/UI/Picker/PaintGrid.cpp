@@ -3,6 +3,7 @@
 
 #include "PaintGrid.h"
 #include "Components/SizeBox.h"
+#include "Components/HorizontalBoxSlot.h"
 
 void UPaintGrid::AddPainting(int32 index, FString PaintName)
 {
@@ -30,4 +31,15 @@ void UPaintGrid::ClearPaint()
 
 		CardContainer->ClearChildren();
 	}
+}
+
+void UPaintGrid::AddPageDot(bool active)
+{
+	if(!PageDots) return;
+	
+	auto Dot = CreateWidget<UPageDot>(GetWorld(), PageDotClass);
+	if(!Dot) return;
+
+	UHorizontalBoxSlot* PageDotSlot = PageDots->AddChildToHorizontalBox(Dot);
+	PageDotSlot->SetPadding(FMargin(PageDotPadding, 0));
 }
