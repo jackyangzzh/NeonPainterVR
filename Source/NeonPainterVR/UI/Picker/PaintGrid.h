@@ -23,8 +23,11 @@ public:
 		void AddPainting(int32 index, FString PaintName);
 
 	void ClearPaint();
+	void ClearDots();
 
 	void AddPageDot(bool active);
+
+	int32 GetSlotNumber() const;
 	
 protected:
 	UPROPERTY(BlueprintReadonly, VisibleAnywhere, meta = (BindWidget))

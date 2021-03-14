@@ -35,6 +35,7 @@ void APicker::BeginPlay()
 	}
 
 	LoadSlots();
+	LoadDots();
 }
 
 void APicker::AddPaint()
@@ -42,8 +43,7 @@ void APicker::AddPaint()
 	UNeonPainterSaveGame::Create();
 
 	LoadSlots();
-
-	UE_LOG(LogTemp, Warning, TEXT("Add Paint"));
+	LoadDots();
 }
 
 void APicker::DeletePaint()
@@ -54,8 +54,6 @@ void APicker::DeletePaint()
 		return;
 
 	PaintGridWidget->ClearPaint();
-	
-	UE_LOG(LogTemp, Warning, TEXT("Delete Paint"));
 }
 
 void APicker::LoadSlots()
@@ -63,10 +61,6 @@ void APicker::LoadSlots()
 	UPaintGrid *PaintGridWidget = Cast<UPaintGrid>(PaintGrid->GetUserWidgetObject());
 	if (!PaintGridWidget)
 		return;
-	
-	PaintGridWidget->AddPageDot(false);
-	PaintGridWidget->AddPageDot(false);
-	PaintGridWidget->AddPageDot(false);
 
 	PaintGridWidget->ClearPaint();
 
@@ -79,9 +73,33 @@ void APicker::LoadSlots()
 	}
 }
 
+void APicker::LoadDots()
+{
+	UPaintGrid *PaintGridWidget = Cast<UPaintGrid>(PaintGrid->GetUserWidgetObject());
+	if (!PaintGridWidget) return;
+
+	PaintGridWidget->ClearDots();
+
+	for(int32 i = 0; i < GetPageNumber(); i++)
+	{
+		PaintGridWidget->AddPageDot(CurrentPageIndex == i);
+	}
+}
+
 // Called every frame
 void APicker::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+}
+
+int32 APicker::GetPageNumber() const
+{
+	UPaintGrid *PaintGridWidget = Cast<UPaintGrid>(PaintGrid->GetUserWidgetObject());
+	if(!PaintGridWidget) return 0;
+	 
+	int32 SlotLength = USaveGameIndex::Load()->GetSlotNames().Num();
+	int32 SlotAverage = PaintGridWidget->GetSlotNumber();
+
+	return FMath::CeilToInt((float) SlotLength / SlotAverage);
 }
 

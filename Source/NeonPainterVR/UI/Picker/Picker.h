@@ -37,4 +37,9 @@ private:
 		UWidgetComponent* ActionBar;
 
 	void LoadSlots();
+	void LoadDots();
+	int32 GetPageNumber() const;
+
+	UPROPERTY(EditAnywhere)
+		int32 CurrentPageIndex = 0;
 };

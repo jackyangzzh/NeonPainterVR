@@ -10,7 +10,28 @@
 		}
 	],
 	"settings": {
-		"typescript.tsc.autoDetect": "off"
+		"typescript.tsc.autoDetect": "off",
+		"files.associations": {
+			"atomic": "cpp",
+			"deque": "cpp",
+			"filesystem": "cpp",
+			"forward_list": "cpp",
+			"ios": "cpp",
+			"list": "cpp",
+			"system_error": "cpp",
+			"vector": "cpp",
+			"xhash": "cpp",
+			"xiosbase": "cpp",
+			"xstring": "cpp",
+			"xtree": "cpp",
+			"__split_buffer": "cpp",
+			"hash_map": "cpp",
+			"hash_set": "cpp",
+			"map": "cpp",
+			"set": "cpp",
+			"unordered_map": "cpp",
+			"unordered_set": "cpp"
+		}
 	},
 	"extensions": {
 		"recommendations": [

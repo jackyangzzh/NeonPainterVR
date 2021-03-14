@@ -33,6 +33,13 @@ void UPaintGrid::ClearPaint()
 	}
 }
 
+void UPaintGrid::ClearDots()
+{
+	if(!PageDots) return;
+
+	PageDots->ClearChildren();
+}
+
 void UPaintGrid::AddPageDot(bool active)
 {
 	if(!PageDots) return;
@@ -40,6 +47,13 @@ void UPaintGrid::AddPageDot(bool active)
 	auto Dot = CreateWidget<UPageDot>(GetWorld(), PageDotClass);
 	if(!Dot) return;
 
+	Dot->SetActive(active);
+
 	UHorizontalBoxSlot* PageDotSlot = PageDots->AddChildToHorizontalBox(Dot);
 	PageDotSlot->SetPadding(FMargin(PageDotPadding, 0));
+}
+
+int32 UPaintGrid::GetSlotNumber() const
+{
+	return PaintGrid->GetChildrenCount();
 }
