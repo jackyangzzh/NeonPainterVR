@@ -56,6 +56,14 @@ void APicker::DeletePaint()
 	PaintGridWidget->ClearPaint();
 }
 
+void APicker::UpdatePage(int32 Offset)
+{
+	CurrentPageIndex = FMath::Clamp(CurrentPageIndex + Offset, 0, GetPageNumber() - 1);
+
+	LoadSlots();
+	LoadDots();
+}
+
 void APicker::LoadSlots()
 {
 	UPaintGrid *PaintGridWidget = Cast<UPaintGrid>(PaintGrid->GetUserWidgetObject());
@@ -65,11 +73,12 @@ void APicker::LoadSlots()
 	PaintGridWidget->ClearPaint();
 
 	int32 index = 0;
+	int32 startOffset = CurrentPageIndex * PaintGridWidget->GetSlotNumber();
+	auto SlotName = USaveGameIndex::Load()->GetSlotNames();
 
-	for (FString SlotName : USaveGameIndex::Load()->GetSlotNames())
+	for (int32 i = 0; i < PaintGridWidget->GetSlotNumber() && startOffset + i < SlotName.Num(); i++)
 	{
-		PaintGridWidget->AddPainting(index, SlotName);
-		index++;
+		PaintGridWidget->AddPainting(i, SlotName[startOffset + i]);
 	}
 }
 

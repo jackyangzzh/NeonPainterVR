@@ -22,6 +22,8 @@ public:
 	void AddPaint();
 	void DeletePaint();
 
+	void UpdatePage(int32 Offset);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

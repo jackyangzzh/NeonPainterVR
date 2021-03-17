@@ -5,6 +5,8 @@
 #include "PaintHandController.h"
 #include "Saving/NeonPainterSaveGame.h"
 #include "PaintMode.h"
+#include "UI/Picker/Picker.h"
+#include "EngineUtils.h"
 #include "Kismet/GameplayStatics.h"
 
 // Sets default values
@@ -46,4 +48,28 @@ void AVRPawn::SetupPlayerInputComponent(UInputComponent *PlayerInputComponent)
 
 	PlayerInputComponent->BindAction(TEXT("RightTrigger"), EInputEvent::IE_Pressed, this, &AVRPawn::RightTriggerPressed);
 	PlayerInputComponent->BindAction(TEXT("RightTrigger"), EInputEvent::IE_Released, this, &AVRPawn::RightTriggerReleased);
+
+	PlayerInputComponent->BindAxis(TEXT("PageRight"), this, &AVRPawn::PageRightInput);
+}
+
+void AVRPawn::PageRightInput(float value)
+{
+	int32 PageOffset = 0;
+	PageOffset += value > PageThreshold ? 1 : 0;
+	PageOffset -= value < -PageThreshold ? 1 : 0;
+
+	if(PageOffset != PreviousPageOffset && PageOffset != 0)
+	{
+		UpdatePage(PageOffset);
+	}
+
+	PreviousPageOffset = PageOffset;
+}
+
+void AVRPawn::UpdatePage(int32 Offset)
+{
+	for (TActorIterator<APicker> PickerItr(GetWorld()); PickerItr; ++PickerItr)
+	{
+		PickerItr->UpdatePage(Offset);
+	}
 }

@@ -27,11 +27,18 @@ private:
 	void RightTriggerPressed() { if (RightPaintHandController) RightPaintHandController->TriggerPressed(); }
 	void RightTriggerReleased() { if (RightPaintHandController) RightPaintHandController->TriggerReleased(); }
 
+	void PageRightInput(float value);
+	void UpdatePage(int32 Offset);
+
 	// Config
 	UPROPERTY(EditDefaultsOnly)
 		TSubclassOf<AHandControllerBase> PaintHandControllerClass;
+
 	UPROPERTY(EditDefaultsOnly)
 		TSubclassOf<AHandControllerBase> MenuHandControllerClass;
+
+	UPROPERTY(EditDefaultsOnly)
+		float PageThreshold = 0.85;
 
 	// Components
 	UPROPERTY(VisibleAnywhere)
@@ -48,4 +55,6 @@ private:
 
 	UPROPERTY()
 		AHandControllerBase* LeftMenuHandController;
+
+	int32 PreviousPageOffset = 0;
 };
