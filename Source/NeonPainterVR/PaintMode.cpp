@@ -10,7 +10,6 @@ void APaintMode::InitGame(const FString &MapName, const FString &Options, FStrin
 	Super::InitGame(MapName, Options, ErrorMessage);
 	SlotName = UGameplayStatics::ParseOption(Options, "SlotName");
 
-	UE_LOG(LogTemp, Warning, TEXT("SlotName: %s"), *SlotName);
 }
 
 void APaintMode::BeginPlay()
@@ -37,6 +36,7 @@ void APaintMode::Save()
 
 	if (SaveFile)
 	{
+		
 		SaveFile->SerializeFromWorld(GetWorld());
 		SaveFile->Save();
 	}

@@ -6,6 +6,7 @@
 #include "Blueprint/UserWidget.h"
 #include "Components/TextBlock.h"
 #include "Components/Button.h"
+#include "Components/Image.h"
 #include "PaintGridCard.generated.h"
 
 /**
@@ -20,11 +21,14 @@ public:
 	void SetPaintingName(FString PaintingName);
 
 protected: 
-	UPROPERTY(BlueprintReadonly, VisibleAnywhere, meta = (BindWidget))
-		UTextBlock* SlotName;
+	//UPROPERTY(BlueprintReadonly, VisibleAnywhere)
+	//	UTextBlock* SlotName;
 
 	UPROPERTY(BlueprintReadonly, VisibleAnywhere, meta = (BindWidget))
 		UButton* SlotButton;
+
+	UPROPERTY(meta = (BindWidget))
+		UImage* Thumbnail;
 
 private:
 	UFUNCTION()

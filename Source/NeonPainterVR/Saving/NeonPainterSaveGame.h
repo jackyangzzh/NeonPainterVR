@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/SaveGame.h"
+#include "Materials/MaterialInterface.h"
 
 #include "NeonPainterSaveGame.generated.h"
 
@@ -16,10 +17,16 @@ struct FStrokeState
 		TSubclassOf<class AStroke> Class;
 
 	UPROPERTY()
+		FTransform Transform;
+
+	UPROPERTY()
+		class UMaterialInterface* Material;
+
+	UPROPERTY()
 		TArray<FVector> ControlPoints;
 };
 /**
- * 
+ *
  */
 UCLASS()
 class NEONPAINTERVR_API UNeonPainterSaveGame : public USaveGame
@@ -34,7 +41,9 @@ public:
 	static UNeonPainterSaveGame* Load(FString SlotName);
 
 	void SetState(FString NewState) { State = NewState; }
-	FString GetState() const { return State;  }
+	FString GetState() const { return State; }
+
+	static FString GetImagePath(const FString SlotName);
 
 	void SerializeFromWorld(UWorld* World);
 	void DeserializeToWorld(UWorld* world);

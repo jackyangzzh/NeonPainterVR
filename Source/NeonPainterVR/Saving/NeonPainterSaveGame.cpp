@@ -5,6 +5,7 @@
 #include "EngineUtils.h"
 #include "../Stroke.h"
 #include "Misc/Guid.h"
+#include "../UI/Camera/SnapshotCamera.h"
 #include "SaveGameIndex.h"
 
 UNeonPainterSaveGame* UNeonPainterSaveGame::Create() 
@@ -38,6 +39,16 @@ void UNeonPainterSaveGame::SerializeFromWorld(UWorld* World)
 	{
 		StrokeArray.Add(stroke->SerializeToStruct());
 	}
+
+	for (TActorIterator<ASnapshotCamera> SnapshotCamera(World); SnapshotCamera; ++SnapshotCamera)
+	{
+		FString ThumbnailDir = FPaths::Combine(FPaths::ProjectSavedDir(), TEXT("Thumbs"));
+		IFileManager::Get().MakeDirectory(*ThumbnailDir, true);
+		FString FileName = SlotName + ".png";
+
+		SnapshotCamera->Screenshot(ThumbnailDir, FileName);
+		break;
+	}
 }
 
 void UNeonPainterSaveGame::DeserializeToWorld(UWorld* World)
@@ -51,4 +62,12 @@ void UNeonPainterSaveGame::DeserializeToWorld(UWorld* World)
 	{
 		AStroke::DeserializeFromStruct(World, StrokeState);
 	}
+}
+
+FString UNeonPainterSaveGame::GetImagePath(const FString SlotName)
+{
+	FString ThumbnailDirectory = FPaths::Combine(FPaths::ProjectSavedDir(), TEXT("Thumbnail"));
+	FString FileName = SlotName + ".png";
+
+	return FPaths::Combine(ThumbnailDirectory, FileName);
 }
