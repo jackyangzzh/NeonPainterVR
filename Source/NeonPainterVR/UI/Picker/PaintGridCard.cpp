@@ -16,7 +16,10 @@ void UPaintGridCard::SetPaintingName(FString Name)
 	{
 		FSlateDynamicImageBrush Brush(*ImagePath, FVector2D(1000, 1000), FLinearColor::White);
 		Thumbnail->SetBrush(Brush);
+		UE_LOG(LogTemp, Warning, TEXT("Picture saved at %s"), *ImagePath);
 	}
+
+	UE_LOG(LogTemp, Warning, TEXT("Brush not saved"));
 
 	SlotButton->OnClicked.AddDynamic(this, &UPaintGridCard::OnClickButton);
 }

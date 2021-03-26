@@ -42,13 +42,11 @@ void UNeonPainterSaveGame::SerializeFromWorld(UWorld* World)
 
 	for (TActorIterator<ASnapshotCamera> SnapshotCamera(World); SnapshotCamera; ++SnapshotCamera)
 	{
-		FString ThumbnailDir = FPaths::Combine(FPaths::ProjectSavedDir(), TEXT("Thumbs"));
+		FString ThumbnailDir = FPaths::Combine(FPaths::ProjectSavedDir(), TEXT("Thumbnail"));
 		IFileManager::Get().MakeDirectory(*ThumbnailDir, true);
 		FString FileName = SlotName + ".png";
-		UE_LOG(LogTemp, Warning, TEXT("Picture saved at %s"), *ThumbnailDir);
 
 		SnapshotCamera->Screenshot(ThumbnailDir, FileName);
-		UE_LOG(LogTemp, Warning, TEXT("Name is %s"), *FileName);
 		break;
 	}
 }
