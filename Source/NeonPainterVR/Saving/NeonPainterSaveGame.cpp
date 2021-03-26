@@ -45,8 +45,10 @@ void UNeonPainterSaveGame::SerializeFromWorld(UWorld* World)
 		FString ThumbnailDir = FPaths::Combine(FPaths::ProjectSavedDir(), TEXT("Thumbs"));
 		IFileManager::Get().MakeDirectory(*ThumbnailDir, true);
 		FString FileName = SlotName + ".png";
+		UE_LOG(LogTemp, Warning, TEXT("Picture saved at %s"), *ThumbnailDir);
 
 		SnapshotCamera->Screenshot(ThumbnailDir, FileName);
+		UE_LOG(LogTemp, Warning, TEXT("Name is %s"), *FileName);
 		break;
 	}
 }
