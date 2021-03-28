@@ -33,7 +33,6 @@ private:
 	UPROPERTY(EditAnywhere)
 		TSubclassOf<AStroke> StrokeClass;
 
-
 	// State 
 	AStroke* CurrentStroke;
 };

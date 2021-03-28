@@ -44,11 +44,12 @@ public:
 	FString GetState() const { return State; }
 
 	static FString GetImagePath(const FString SlotName);
+	FString GetSlotName() const { return SlotName; }
 
 	void SerializeFromWorld(UWorld* World);
 	void DeserializeToWorld(UWorld* world);
 
-	FString GetSlotName() const { return SlotName; }
+	void Delete();
 
 private:
 	UPROPERTY()

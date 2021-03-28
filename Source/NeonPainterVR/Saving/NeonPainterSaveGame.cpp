@@ -32,6 +32,17 @@ UNeonPainterSaveGame* UNeonPainterSaveGame::Load(FString SlotName)
 	return Cast<UNeonPainterSaveGame>(UGameplayStatics::LoadGameFromSlot(SlotName, 0));
 }
 
+
+void UNeonPainterSaveGame::Delete()
+{
+	auto Selected = USaveGameIndex::Load();
+	Selected->RemovePaint(SlotName);
+	Selected->Save();
+
+	UGameplayStatics::DeleteGameInSlot(SlotName, 0);
+	IFileManager::Get().Delete(*GetImagePath(SlotName));
+}
+
 void UNeonPainterSaveGame::SerializeFromWorld(UWorld* World)
 {
 	StrokeArray.Empty();
@@ -63,6 +74,7 @@ void UNeonPainterSaveGame::DeserializeToWorld(UWorld* World)
 		AStroke::DeserializeFromStruct(World, StrokeState);
 	}
 }
+
 
 FString UNeonPainterSaveGame::GetImagePath(const FString SlotName)
 {

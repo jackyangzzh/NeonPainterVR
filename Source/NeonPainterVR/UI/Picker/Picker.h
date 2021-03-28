@@ -22,6 +22,9 @@ public:
 	void AddPaint();
 	void DeletePaint();
 
+	void ToggleDeleteMode();
+	void DeletePainting(FString SlotName);
+
 	void UpdatePage(int32 Offset);
 
 protected:
@@ -40,7 +43,9 @@ private:
 
 	void LoadSlots();
 	void LoadDots();
+
 	int32 GetPageNumber() const;
+	bool DeleteMode = false;
 
 	UPROPERTY(EditAnywhere)
 		int32 CurrentPageIndex = 0;

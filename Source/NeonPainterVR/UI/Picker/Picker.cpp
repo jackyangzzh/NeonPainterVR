@@ -56,6 +56,17 @@ void APicker::DeletePaint()
 	PaintGridWidget->ClearPaint();
 }
 
+void APicker::ToggleDeleteMode()
+{
+	DeleteMode = !DeleteMode;
+}
+
+void APicker::DeletePainting(FString SlotName)
+{
+	auto Slot = UNeonPainterSaveGame::Load(SlotName);
+	
+}
+
 void APicker::UpdatePage(int32 Offset)
 {
 	CurrentPageIndex = FMath::Clamp(CurrentPageIndex + Offset, 0, GetPageNumber() - 1);

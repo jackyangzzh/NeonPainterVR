@@ -21,6 +21,7 @@ public:
 
 	void AddSaveGame(UNeonPainterSaveGame* SaveGame);
 	TArray<FString> GetSlotNames() const { return SlotNames; }
+	void RemovePaint(FString Name) { SlotNames.Remove(Name); }
 
 private:
 	static const FString SlotName;

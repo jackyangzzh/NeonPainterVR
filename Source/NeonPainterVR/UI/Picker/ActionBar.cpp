@@ -33,6 +33,6 @@ void UActionBar::OnDeleteButtonClick()
 {
     if(ParentPicker)
     {
-        ParentPicker->DeletePaint();
+        ParentPicker->ToggleDeleteMode();
     }
 }
