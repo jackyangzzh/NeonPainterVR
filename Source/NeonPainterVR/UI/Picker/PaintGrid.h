@@ -26,6 +26,7 @@ public:
 	void ClearDots();
 
 	void AddPageDot(bool active);
+	void SetParentPicker(APicker* newPicker);
 
 	int32 GetSlotNumber() const;
 	
@@ -45,4 +46,7 @@ private:
 
 	UPROPERTY(EditDefaultsOnly)
 		float PageDotPadding = 10;
+
+	UPROPERTY()
+		APicker* ParentPicker;
 };

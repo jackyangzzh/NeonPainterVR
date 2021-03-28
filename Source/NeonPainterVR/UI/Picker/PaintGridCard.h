@@ -7,6 +7,8 @@
 #include "Components/TextBlock.h"
 #include "Components/Button.h"
 #include "Components/Image.h"
+#include "Picker.h"
+
 #include "PaintGridCard.generated.h"
 
 /**
@@ -19,10 +21,13 @@ class NEONPAINTERVR_API UPaintGridCard : public UUserWidget
 
 public:
 	void SetPaintingName(FString PaintingName);
+	void SetParentPicker(APicker* newPicker);
 
 protected: 
 	//UPROPERTY(BlueprintReadonly, VisibleAnywhere)
 	//	UTextBlock* SlotName;
+	UPROPERTY()
+		APicker* ParentPicker;
 
 	UPROPERTY(BlueprintReadonly, VisibleAnywhere, meta = (BindWidget))
 		UButton* SlotButton;

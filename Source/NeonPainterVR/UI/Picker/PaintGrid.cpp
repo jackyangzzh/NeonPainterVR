@@ -8,7 +8,7 @@
 void UPaintGrid::AddPainting(int32 index, FString PaintName)
 {
 	if (!PaintGrid) return;
-	
+
 	UPaintGridCard* newWidget = CreateWidget<UPaintGridCard>(GetWorld(), GridClass);
 
 	newWidget->SetPaintingName(PaintName);
@@ -19,14 +19,16 @@ void UPaintGrid::AddPainting(int32 index, FString PaintName)
 
 	if (!CardContainer) return;
 
+	newWidget->SetParentPicker(ParentPicker);
 	CardContainer->AddChild(newWidget);
+
 }
 
 void UPaintGrid::ClearPaint()
 {
 	for (int32 i = 0; i < PaintGrid->GetChildrenCount(); i++)
 	{
-		USizeBox *CardContainer = Cast<USizeBox>(PaintGrid->GetChildAt(i));
+		USizeBox* CardContainer = Cast<USizeBox>(PaintGrid->GetChildAt(i));
 		if (!CardContainer) continue;
 
 		CardContainer->ClearChildren();
@@ -35,17 +37,22 @@ void UPaintGrid::ClearPaint()
 
 void UPaintGrid::ClearDots()
 {
-	if(!PageDots) return;
+	if (!PageDots) return;
 
 	PageDots->ClearChildren();
 }
 
+void UPaintGrid::SetParentPicker(APicker* newPicker)
+{
+	ParentPicker = newPicker;
+}
+
 void UPaintGrid::AddPageDot(bool active)
 {
-	if(!PageDots) return;
-	
+	if (!PageDots) return;
+
 	auto Dot = CreateWidget<UPageDot>(GetWorld(), PageDotClass);
-	if(!Dot) return;
+	if (!Dot) return;
 
 	Dot->SetActive(active);
 

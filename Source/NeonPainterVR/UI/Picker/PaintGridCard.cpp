@@ -5,6 +5,7 @@
 #include "Kismet/StereoLayerFunctionLibrary.h"
 #include "Kismet/GameplayStatics.h"
 #include "../../Saving/NeonPainterSaveGame.h"
+#include "Picker.h"
 
 void UPaintGridCard::SetPaintingName(FString Name)
 {
@@ -16,18 +17,27 @@ void UPaintGridCard::SetPaintingName(FString Name)
 	{
 		FSlateDynamicImageBrush Brush(*ImagePath, FVector2D(1000, 1000), FLinearColor::White);
 		Thumbnail->SetBrush(Brush);
-		UE_LOG(LogTemp, Warning, TEXT("Picture saved at %s"), *ImagePath);
 	}
-
-	UE_LOG(LogTemp, Warning, TEXT("Brush not saved"));
 
 	SlotButton->OnClicked.AddDynamic(this, &UPaintGridCard::OnClickButton);
 }
 
+void UPaintGridCard::SetParentPicker(APicker* newPicker)
+{
+	ParentPicker = newPicker;
+}
+
 void UPaintGridCard::OnClickButton()
 {
-	UStereoLayerFunctionLibrary::ShowSplashScreen();
-	UGameplayStatics::OpenLevel(GetWorld(),TEXT("Canvas"), true, "SlotName=" + PaintName);
-	UE_LOG(LogTemp, Warning, TEXT("Hello"));
+	if (ParentPicker->GetDeleteMode())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Delete Mode"));
+		ParentPicker->DeletePainting(PaintName);
+	}
+	else {
+		UStereoLayerFunctionLibrary::ShowSplashScreen();
+		UGameplayStatics::OpenLevel(GetWorld(), TEXT("Canvas"), true, "SlotName=" + PaintName);
+	}
+
 }
 

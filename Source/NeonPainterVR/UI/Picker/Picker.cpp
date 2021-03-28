@@ -29,9 +29,15 @@ void APicker::BeginPlay()
 	Super::BeginPlay();
 
 	UActionBar *ActionBarWidget = Cast<UActionBar>(ActionBar->GetUserWidgetObject());
+	UPaintGrid *PaintGridWidget = Cast<UPaintGrid>(PaintGrid->GetUserWidgetObject());
+
 	if (ActionBarWidget) 
 	{
 		ActionBarWidget->SetParentPicker(this);
+	}
+	if (PaintGridWidget)
+	{
+		PaintGridWidget->SetParentPicker(this);
 	}
 
 	LoadSlots();
@@ -64,7 +70,10 @@ void APicker::ToggleDeleteMode()
 void APicker::DeletePainting(FString SlotName)
 {
 	auto Slot = UNeonPainterSaveGame::Load(SlotName);
-	
+	Slot->Delete();
+
+	LoadSlots();
+	LoadDots();
 }
 
 void APicker::UpdatePage(int32 Offset)

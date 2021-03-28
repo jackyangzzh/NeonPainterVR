@@ -11,8 +11,8 @@ UCLASS()
 class NEONPAINTERVR_API APicker : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	APicker();
 
@@ -26,10 +26,13 @@ public:
 	void DeletePainting(FString SlotName);
 
 	void UpdatePage(int32 Offset);
+	bool GetDeleteMode() { return DeleteMode; }
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	UPROPERTY()
+		bool DeleteMode = false;
 
 private:
 	UPROPERTY(VisibleAnywhere)
@@ -45,7 +48,6 @@ private:
 	void LoadDots();
 
 	int32 GetPageNumber() const;
-	bool DeleteMode = false;
 
 	UPROPERTY(EditAnywhere)
 		int32 CurrentPageIndex = 0;
