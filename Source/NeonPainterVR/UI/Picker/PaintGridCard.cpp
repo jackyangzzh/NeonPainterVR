@@ -31,7 +31,6 @@ void UPaintGridCard::OnClickButton()
 {
 	if (ParentPicker->GetDeleteMode())
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Delete Mode"));
 		ParentPicker->DeletePainting(PaintName);
 	}
 	else {

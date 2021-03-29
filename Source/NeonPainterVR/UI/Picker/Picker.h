@@ -26,11 +26,14 @@ public:
 	void DeletePainting(FString SlotName);
 
 	void UpdatePage(int32 Offset);
-	bool GetDeleteMode() { return DeleteMode; }
+
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+		bool GetDeleteMode() { return DeleteMode; }
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
 	UPROPERTY()
 		bool DeleteMode = false;
 

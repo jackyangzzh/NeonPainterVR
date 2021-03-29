@@ -9,7 +9,7 @@
 #include "ActionBar.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class NEONPAINTERVR_API UActionBar : public UUserWidget
@@ -19,7 +19,10 @@ class NEONPAINTERVR_API UActionBar : public UUserWidget
 public:
 	bool Initialize() override;
 
-	void SetParentPicker(APicker *newPicker);
+	void SetParentPicker(APicker* newPicker);
+
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+		bool GetDeleteMode() { return ParentPicker->GetDeleteMode(); };
 
 protected:
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, meta = (BindWidget))
@@ -31,7 +34,7 @@ protected:
 private:
 	UFUNCTION()
 		void OnAddButtonClick();
-	
+
 	UFUNCTION()
 		void OnDeleteButtonClick();
 
