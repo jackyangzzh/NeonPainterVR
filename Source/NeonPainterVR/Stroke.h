@@ -23,6 +23,14 @@ public:
 	FStrokeState SerializeToStruct() const;
 	static AStroke* DeserializeFromStruct(UWorld* World, const FStrokeState& StrokeState);
 
+	void RandomChangeMaterial();
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+		UInstancedStaticMeshComponent* StrokeMesh;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+		UInstancedStaticMeshComponent* JointMesh;
+
 private:
 
 	FTransform GetNextSegmentTransform(FVector CurrentLocation) const;
@@ -35,12 +43,6 @@ private:
 
 	UPROPERTY(VisibleAnywhere)
 		USceneComponent* Root;
-
-	UPROPERTY(VisibleAnywhere)
-		UInstancedStaticMeshComponent* StrokeMesh;
-
-	UPROPERTY(VisibleAnywhere)
-		UInstancedStaticMeshComponent* JointMesh;
 
 	FVector PreviousCursor;
 	TArray<FVector> ControlPoints;

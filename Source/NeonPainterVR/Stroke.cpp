@@ -55,6 +55,13 @@ AStroke* AStroke::DeserializeFromStruct(UWorld* World, const FStrokeState& Strok
 	return Stroke;
 }
 
+void AStroke::RandomChangeMaterial()
+{
+	UMaterialInterface* material = StrokeMesh->GetMaterial(0);
+	
+
+}
+
 FTransform AStroke::GetNextJointTransform(FVector CurrentLocation) const
 {
 	FTransform JointTransform;
