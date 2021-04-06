@@ -24,6 +24,10 @@ struct FStrokeState
 
 	UPROPERTY()
 		TArray<FVector> ControlPoints;
+
+	UPROPERTY()
+		TArray<FVector> RandomColors;
+
 };
 /**
  *

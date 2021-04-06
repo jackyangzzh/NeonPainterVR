@@ -75,7 +75,6 @@ void UNeonPainterSaveGame::DeserializeToWorld(UWorld* World)
 	}
 }
 
-
 FString UNeonPainterSaveGame::GetImagePath(const FString SlotName)
 {
 	FString ThumbnailDirectory = FPaths::Combine(FPaths::ProjectSavedDir(), TEXT("Thumbnail"));

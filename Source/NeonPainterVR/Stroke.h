@@ -18,12 +18,13 @@ public:
 	// Sets default values for this actor's properties
 	AStroke();
 
-	void Update(FVector CursorLocation);
+	void Update(FVector CursorLocation, FVector RandomColor = { 234,4,80 });
 
 	FStrokeState SerializeToStruct() const;
 	static AStroke* DeserializeFromStruct(UWorld* World, const FStrokeState& StrokeState);
 
-	void RandomChangeMaterial();
+	UFUNCTION(BlueprintCallable)
+		void RandomChangeMaterial();
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		UInstancedStaticMeshComponent* StrokeMesh;
@@ -44,6 +45,10 @@ private:
 	UPROPERTY(VisibleAnywhere)
 		USceneComponent* Root;
 
+	UPROPERTY(EditDefaultsOnly)
+		class UMaterialInterface* Material;
+
 	FVector PreviousCursor;
 	TArray<FVector> ControlPoints;
+	TArray<FVector> RandomColors;
 };
