@@ -50,5 +50,5 @@ private:
 
 	FVector PreviousCursor;
 	TArray<FVector> ControlPoints;
-	TArray<FVector> RandomColors;
+	FVector RandomColor = { 235,4,80 };
 };
