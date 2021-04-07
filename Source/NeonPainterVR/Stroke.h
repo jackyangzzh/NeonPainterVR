@@ -24,7 +24,7 @@ public:
 	static AStroke* DeserializeFromStruct(UWorld* World, const FStrokeState& StrokeState);
 
 	UFUNCTION(BlueprintCallable)
-		void RandomChangeMaterial();
+		FVector RandomChangeMaterial();
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		UInstancedStaticMeshComponent* StrokeMesh;

@@ -24,7 +24,6 @@ AStroke::AStroke()
 void AStroke::Update(FVector CursorLocation, FVector Color)
 {
 	ControlPoints.Add(CursorLocation);
-	/*RandomColors.Add(RandomColor);*/
 
 	if (PreviousCursor.IsNearlyZero()) {
 		PreviousCursor = CursorLocation;
@@ -32,13 +31,11 @@ void AStroke::Update(FVector CursorLocation, FVector Color)
 		return;
 	}
 
-
 	StrokeMesh->AddInstance(GetNextSegmentTransform(CursorLocation));
 	JointMesh->AddInstance(GetNextJointTransform(CursorLocation));
 
 	StrokeMesh->SetVectorParameterValueOnMaterials("Color", Color);
 	JointMesh->SetVectorParameterValueOnMaterials("Color", Color);
-
 
 	PreviousCursor = CursorLocation;
 }
@@ -59,12 +56,13 @@ AStroke* AStroke::DeserializeFromStruct(UWorld* World, const FStrokeState& Strok
 	
 	for (int i = 0; i < StrokeState.ControlPoints.Num(); i++)
 	{
+		Stroke->RandomColor = StrokeState.RandomColor;
 		Stroke->Update(StrokeState.ControlPoints[i], StrokeState.RandomColor);
 	}
 	return Stroke;
 }
 
-void AStroke::RandomChangeMaterial()
+FVector AStroke::RandomChangeMaterial()
 {
 	FVector newRandomColor;
 	newRandomColor.X = FMath::FRandRange(0, 255);
@@ -76,6 +74,7 @@ void AStroke::RandomChangeMaterial()
 	StrokeMesh->SetVectorParameterValueOnMaterials("Color", newRandomColor);
 	JointMesh->SetVectorParameterValueOnMaterials("Color", newRandomColor);
 
+	return newRandomColor;
 }
 
 FTransform AStroke::GetNextJointTransform(FVector CurrentLocation) const

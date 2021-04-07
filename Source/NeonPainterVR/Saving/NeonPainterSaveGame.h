@@ -27,7 +27,6 @@ struct FStrokeState
 
 	UPROPERTY()
 		FVector RandomColor;
-
 };
 /**
  *

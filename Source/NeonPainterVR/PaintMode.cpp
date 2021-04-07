@@ -36,7 +36,6 @@ void APaintMode::Save()
 
 	if (SaveFile)
 	{
-		
 		SaveFile->SerializeFromWorld(GetWorld());
 		SaveFile->Save();
 	}
