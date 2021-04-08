@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "Components/InstancedStaticMeshComponent.h"
 #include "Saving/NeonPainterSaveGame.h"
+#include "PaintHandController.h"
 
 #include "Stroke.generated.h"
 
@@ -13,8 +14,8 @@ UCLASS()
 class NEONPAINTERVR_API AStroke : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	AStroke();
 
@@ -32,6 +33,7 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		UInstancedStaticMeshComponent* JointMesh;
 
+
 private:
 
 	FTransform GetNextSegmentTransform(FVector CurrentLocation) const;
@@ -48,7 +50,10 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 		class UMaterialInterface* Material;
 
+	UPROPERTY(EditDefaultsOnly)
+		class APaintHandController* PaintController;
+
 	FVector PreviousCursor;
 	TArray<FVector> ControlPoints;
-	FVector RandomColor = { 235,4,80 };
+	FVector RandomColor = { 235, 4,80 };
 };
