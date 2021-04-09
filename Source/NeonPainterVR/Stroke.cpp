@@ -70,7 +70,6 @@ FVector AStroke::RandomChangeMaterial()
 	newRandomColor.Z = FMath::FRandRange(0, 255);
 
 	RandomColor = newRandomColor;
-	//PaintController->;
 
 	StrokeMesh->SetVectorParameterValueOnMaterials("Color", newRandomColor);
 	JointMesh->SetVectorParameterValueOnMaterials("Color", newRandomColor);

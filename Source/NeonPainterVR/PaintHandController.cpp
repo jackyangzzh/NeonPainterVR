@@ -30,8 +30,6 @@ void APaintHandController::TriggerPressed()
 {
 	CurrentStroke = GetWorld()->SpawnActor<AStroke>(StrokeClass);
 	CurrentStroke->SetActorLocation(GetActorLocation());
-	//CurrentStroke->SetColor(CurrentColor);
-	UE_LOG(LogTemp, Warning, TEXT("%s"), *CurrentColor.ToString());
 }
 
 void APaintHandController::TriggerReleased()
